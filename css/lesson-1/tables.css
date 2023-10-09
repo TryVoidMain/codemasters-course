@@ -1,0 +1,26 @@
+.table {
+    width: 300px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.th__first-column {
+    min-width: 100px;
+    min-height: 25px;
+}
+
+.th__last-column {
+    min-width: 200px;
+    min-height: 25px;
+}
+
+tbody > tr:nth-child(odd) {
+    background-color: var(--color-lessons-easy-gray);
+}
+
+tbody > tr:nth-child(even) {
+    background-color: var(--color-lessons-white);
+}
