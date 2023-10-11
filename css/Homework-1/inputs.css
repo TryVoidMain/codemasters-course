@@ -1,0 +1,5 @@
+.output {
+    overflow: scroll;
+    margin: 1rem 0;
+    height: 75px;
+  }

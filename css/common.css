@@ -1,0 +1,25 @@
+.link-text {
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.badge {
+    all: unset;
+    background: transparent;
+    padding: 6px 6px 4px 6px;
+    border-radius: 5px;
+}
+
+.badge.badge-link {
+    background-color: var(--color-lessons-very-light-yellow);
+}
+
+.py-4 {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.col {
+    display: inline-block;
+}
