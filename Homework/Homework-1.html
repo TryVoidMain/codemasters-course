@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
-<!--Забыл title-->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homework-1</title>
 
-    <link href="../css/Homework-1/tables.css" rel="stylesheet" >
-    <link href="../css/Homework-1/inputs.css" rel="stylesheet" >
-    <link href="../css/common.css" rel="stylesheet" >
-    <link href="../css/themes.css" rel="stylesheet" >
-
-
-
+    <link href="../css/Homework-1/tables.css" rel="stylesheet">
+    <link href="../css/Homework-1/inputs.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/themes.css" rel="stylesheet">
 </head>
 
 <body>
@@ -37,35 +35,36 @@
             <tr>
                 <td>Button</td>
                 <td>
-                    <input  type="button" width="125" value="Button"/>
+                    <input type="button" width="125" value="Button" />
                 </td>
             </tr>
 
             <tr>
                 <td>Checkbox</td>
                 <td>
-                    <input id="input-checkbox" name="Checkbox name" checked/>
+                    <input id="input-checkbox" name="Checkbox name" checked />
                 </td>
             </tr>
-            
+
             <tr>
                 <td>Color</td>
                 <td>
-                    <input type="color" value="#F0F0F0"/>
+                    <input type="color" value="#F0F0F0" />
                 </td>
             </tr>
 
             <tr>
                 <td>Date</td>
                 <td>
-                    <input type="date" value="2023-10-10" min="2023-08-08" max="2023-12-12"/>
+                    <input type="date" value="2023-10-10" min="2023-08-08" max="2023-12-12" />
                 </td>
             </tr>
 
             <tr>
                 <td>Datetime local</td>
                 <td>
-                    <input type="datetime-local" value="2023-10-10T21:45" min="2023-08-08T08:45" max="2023-12-12T20:20"/>
+                    <input type="datetime-local" value="2023-10-10T21:45" min="2023-08-08T08:45"
+                        max="2023-12-12T20:20" />
                 </td>
             </tr>
 
@@ -74,8 +73,9 @@
                 <td>
                     <form>
                         <label for="email">
-                            Enter yours @gmail.com: 
-                            <input inputmode="email" type="email" id="email" pattert=".+@gmail\.com" size="30" required/>
+                            Enter yours @gmail.com:
+                            <input inputmode="email" type="email" id="email" pattert=".+@gmail\.com" size="30"
+                                required />
                         </label>
                         <button type="submit">Check email</button>
                     </form>
@@ -91,50 +91,51 @@
             </tr>
             <tr>
                 <td>Hidden</td>
-                <td><input type="hidden"/></td>
+                <td><input type="hidden" /></td>
             </tr>
             <tr>
                 <td>Image</td>
-                <td><input type="image" src="../Images/Homework-1/image.jpg" alt="There is no image" width="200px"/></td>
+                <td><input type="image" src="../Images/Homework-1/image.jpg" alt="There is no image" width="200px" />
+                </td>
             </tr>
             <tr>
                 <td>Month</td>
-                <td><input type="month"/></td>
+                <td><input type="month" /></td>
             </tr>
             <tr>
                 <td>Number</td>
-                <td><input type="number" value="1000" step="250" inputmode="numeric"/></td>
+                <td><input type="number" value="1000" step="250" inputmode="numeric" /></td>
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input type="password" value="123456"/></td>
+                <td><input type="password" value="123456" /></td>
             </tr>
             <tr>
                 <td>Radio</td>
                 <td>
                     <label for="radio-1">
-                        <input type="radio" name="radio" id="radio-1"/>
+                        <input type="radio" name="radio" id="radio-1" />
                         Radio-1
                     </label>
 
                     <label for="radio-2">
-                        <input type="radio" name="radio" id="radio-2"/>
+                        <input type="radio" name="radio" id="radio-2" />
                         Radio-2
                     </label>
 
                     <label for="radio-3">
-                        <input type="radio" name="radio" id="radio-3"/>
+                        <input type="radio" name="radio" id="radio-3" />
                         Radio-3
                     </label>
-                
+
                 </td>
             </tr>
             <tr>
                 <td>Reset and Range</td>
-                <td> 
+                <td>
                     <form>
-                        <input type="reset" value="Reset"/>
-                        <input type="range" min="0" max="100" value="1"/>
+                        <input type="reset" value="Reset" />
+                        <input type="range" min="0" max="100" value="1" />
                     </form>
                 </td>
             </tr>
@@ -147,23 +148,20 @@
                 <td><input type="submit" value="Submit" /></td>
             </tr>
             <tr>
-                <!--Форма не должна быть тут. Её нужно переместить внутрь td-->
-                <form>
-                    <td>Tel</td>
-                    <td>
+                <td>Tel</td>
+                <td>
+                    <form>
                         <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone" required />
-                        <input type="submit" value="Check number" />     
-                    
-                    </td>
-                </form>
+                        <input type="submit" value="Check number" />
+                    </form>
+                </td>
             </tr>
             <tr>
                 <td>Text</td>
                 <td>
-                    <!--Id некорректное-->
-                    <label for="text">
+                    <label for="input-text">
                         Input text (3 to 20 chars)
-                        <input type="text" minlength="3" size="20"/>
+                        <input id="input-text" type="text" minlength="3" size="20" />
                     </label>
                 </td>
             </tr>
@@ -177,7 +175,7 @@
             </tr>
             <tr>
                 <td>Week</td>
-                <td><input type="week" min="2018-W18" max="2018-W50" required/></td>
+                <td><input type="week" min="2018-W18" max="2018-W50" required /></td>
             </tr>
 
         </tbody>
@@ -185,16 +183,15 @@
 
 </body>
 
-    <script>
-        const output = document.querySelector(".output");
-        const fileInput = document.querySelector("#file");
+<script>
+    const output = document.querySelector(".output");
+    const fileInput = document.querySelector("#file");
 
-        fileInput.addEventListener("change", () => {
-            for (const file of fileInput.files) {
-                output.innerText += `\n${file.name}`;
-            }
-        });
-    </script>
-
+    fileInput.addEventListener("change", () => {
+        for (const file of fileInput.files) {
+            output.innerText += `\n${file.name}`;
+        }
+    });
+</script>
 
 </html>
