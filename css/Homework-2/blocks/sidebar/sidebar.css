@@ -1,0 +1,5 @@
+.sidebar {
+    width: var(---homework-2-sidebar-width);
+    background-color: var(--color-lessons-lavender);
+    height: var(--homework-2-sidebar-height);
+}

@@ -1,0 +1,4 @@
+.content {
+    width: var(--homework-2-content-width);
+    padding: 10px;
+}
