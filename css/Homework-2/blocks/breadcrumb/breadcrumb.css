@@ -1,6 +1,6 @@
 ul.breadcrumb {
-    padding: 10px, 15px;
-    list-style: georgian;
+    padding: 0px 10px;
+    list-style: none; 
     background-color: var(--color-lessons-easy-gray);
 }
 
@@ -10,7 +10,7 @@ ul.breadcrumb li {
 }
 
 ul.breadcrumb li+li::before {
-    padding: 8px;
+    padding: 2px;
     color: var(--color-lessons-black);
     content: "/\00a0";
 }

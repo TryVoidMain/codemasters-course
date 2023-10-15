@@ -1,3 +1,6 @@
 .main-wrapper {
     display: flex;
+    padding: 10px;
+    background-color: var(--color-lessons-white-smoke);
+    flex-direction: column;
 }
