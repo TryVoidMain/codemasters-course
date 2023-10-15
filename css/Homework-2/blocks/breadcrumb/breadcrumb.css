@@ -1,26 +1,5 @@
-ul.breadcrumb {
-    padding: 0px 10px;
-    list-style: none; 
+.breadcrumb {
+    margin: 0px;
     background-color: var(--color-lessons-easy-gray);
-}
-
-ul.breadcrumb li {
-    display: inline;
-    font-size: 18px;
-}
-
-ul.breadcrumb li+li::before {
-    padding: 2px;
-    color: var(--color-lessons-black);
-    content: "/\00a0";
-}
-
-ul.breadcrumb li a {
-    color: var(--color-lessons-dark-orange);
-    text-decoration: none;
-}
-
-ul.breadcrumb li a:hover {
-    color: var(--color-lessons-very-light-yellow);
-    text-decoration: underline;
+    height: var(--homework-2-breadcrumbs-height);
 }
