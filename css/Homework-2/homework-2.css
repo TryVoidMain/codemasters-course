@@ -9,7 +9,7 @@
 @import url(blocks/sidebar/sidebar.css);
 @import url(blocks/sidebar/_left/sidebar_left.css);
 @import url(blocks/content/content.css);
-@import url(blocks/content/_lorem/content_lorem.css);
+@import url(blocks/lorem/lorem.css);
 
 
 :root{
