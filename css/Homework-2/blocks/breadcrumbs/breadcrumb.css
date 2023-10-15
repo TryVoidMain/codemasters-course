@@ -1,0 +1,26 @@
+ul.breadcrumb {
+    padding: 10px, 15px;
+    list-style: georgian;
+    background-color: var(--color-lessons-easy-gray);
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+ul.breadcrumb li+li::before {
+    padding: 8px;
+    color: var(--color-lessons-black);
+    content: "/\00a0";
+}
+
+ul.breadcrumb li a {
+    color: var(--color-lessons-dark-orange);
+    text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+    color: var(--color-lessons-very-light-yellow);
+    text-decoration: underline;
+}
