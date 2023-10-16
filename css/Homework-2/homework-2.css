@@ -1,0 +1,27 @@
+@import url(../themes.css);
+@import url(../common.css);
+@import url(blocks/head-container/head-container.css);
+@import url(blocks/head-container/__logo/head-container__logo.css);
+@import url(blocks/head-container/__menu/head-container__menu.css);
+@import url(blocks/main-wrapper/main-wrapper.css);
+@import url(blocks/breadcrumb/breadcrumb.css);
+@import url(blocks/breadcrumb/__items-list/breadcrumb__items-list.css);
+@import url(blocks/sidebar/sidebar.css);
+@import url(blocks/sidebar/_left/sidebar_left.css);
+@import url(blocks/content/content.css);
+@import url(blocks/lorem/lorem.css);
+
+
+:root{
+    --homework-2-head-container-height: 30px;
+    --homework-2-footer-height: 20px;
+    --homework-2-breadcrumbs-height: 20px;
+
+    --homework-2-main-wrapper-height: calc(100vh - var(--homework-2-head-container-height) - var(--homework-2-footer-height) - var(--homework-2-breadcrumbs-height) - 300);
+    
+    --homework-2-sidebar-width: 200px;
+    --homework-2-sidebar-height: var(--homework-2-main-wrapper-height);
+
+    --homework-2-content-width: calc(100vw - var(--homework-2-sidebar-width));
+
+}

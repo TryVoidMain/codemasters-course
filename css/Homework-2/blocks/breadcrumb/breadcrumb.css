@@ -1,0 +1,5 @@
+.breadcrumb {
+    margin: 0px;
+    background-color: var(--color-lessons-easy-gray);
+    height: var(--homework-2-breadcrumbs-height);
+}

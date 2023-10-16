@@ -1,0 +1,7 @@
+.head-container {
+    display: flex;
+    height: var(--homework-2-head-container-height);
+    align-items: center;
+    padding: 10px 10px;
+    background-color: var(--color-lessons-light-grey);
+}

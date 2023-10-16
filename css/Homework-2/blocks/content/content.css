@@ -1,0 +1,5 @@
+.content {
+    width: var(--homework-2-content-width);
+    background-color: var(--color-lessons-easy-gray);
+    padding: 10px;
+}
