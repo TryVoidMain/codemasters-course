@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    max-width: var(--content-max-width);
+    max-height: var(--header-max-height);
+    background-color: transparent;
+}
+
+.header__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+}

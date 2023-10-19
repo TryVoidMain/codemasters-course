@@ -1,0 +1,7 @@
+.top-content {
+    background-color: var(--color-lessons-easy-gray);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-height: var(--top-content-max-height);
+}
