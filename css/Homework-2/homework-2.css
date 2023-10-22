@@ -19,10 +19,12 @@
 
     --homework-2-content-width: calc(100vw - var(--homework-2-sidebar-width)); */
 
-    --content-max-width: 1440px;
+    --main-content-max-width: 1440px;
 
     --top-content-max-height: 54px;
     --header-max-height: 64px;
     --actions-height: 28px;
-
+    --navbar-max-widht: 305px;
+    --content-max-width: 765px;
+    --references-max-width: 370px;
 }

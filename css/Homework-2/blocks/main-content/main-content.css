@@ -1,0 +1,27 @@
+.main-content {
+    max-width: var(--main-content-max-width);
+    max-height: var();
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content__container {
+    display: contents;
+}
+
+.main-content__navbar {
+    display: flex;
+    max-width: var(--navbar-max-widht);
+}
+
+.main-content__content {
+    display: flex;
+    max-width: var(--content-max-width);
+}
+
+.main-content__references {
+    display: flex;
+    max-width: var(--references-max-width);
+}
