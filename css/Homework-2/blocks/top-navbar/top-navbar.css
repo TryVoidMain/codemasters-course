@@ -1,0 +1,15 @@
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.top-navbar__links {
+    display: flex;
+}
+
+.top-navbar__menus {
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr 2fr;
+    column-gap: 10px;
+}
