@@ -1,9 +1,8 @@
 .main-content {
     max-width: var(--main-content-max-width);
-    max-height: var();
+    max-height: var(--main-content-max-height);
     width: 100%;
     background-color: transparent;
-    display: flex;
     flex-direction: row;
 }
 
