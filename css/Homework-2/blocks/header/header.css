@@ -3,11 +3,17 @@
     max-width: var(--content-max-width);
     max-height: var(--header-max-height);
     background-color: transparent;
+    width: 100%;
 }
 
 .header__logo {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 0 30px;
+    padding-right: 30px;
+    min-width: 160px;
+}
+
+.header__top-navbar {
+    padding-left: 30px;
+    align-items: center;
 }
