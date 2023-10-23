@@ -1,5 +1,6 @@
 .wrapper {
-    background-color: var(--color-lessons-black);
+    background-color: var(--color-lessons-background-primary);
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     justify-content: center;

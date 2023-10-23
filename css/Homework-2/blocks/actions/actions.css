@@ -3,9 +3,9 @@
     justify-content: center;
     width: 100%;
     height: var(--actions-height);
-    background-color: var(--color-lessons-easy-gray);
-    border-top: 3px solid var(--color-lessons-light-grey);
-    border-bottom: 3px solid var(--color-lessons-light-grey);
+    background-color: var(--color-lessons-background-secondary);
+    border-top: 3px solid var(--color-lessons-border-primary);
+    border-bottom: 3px solid var(--color-lessons-border-primary);
 }
 
 .actions__container {

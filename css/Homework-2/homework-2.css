@@ -7,6 +7,8 @@
 @import url(blocks/actions/actions.css);
 @import url(blocks/top-navbar/top-navbar.css);
 @import url(blocks/main-content/main-content.css);
+@import url(blocks/content/content.css);
+@import url(blocks/references/references.css);
 
 :root{
     --main-content-max-width: 1440px;
