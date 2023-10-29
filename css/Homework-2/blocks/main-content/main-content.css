@@ -14,17 +14,14 @@
 
 .main-content__navbar {
     display: flex;
-    max-width: var(--navbar-max-widht);
 }
 
 .main-content__content {
     display: flex;
-    max-width: var(--content-max-width);
     color: var(--color-lessons-text-primary);
     flex-direction: column;
 }
 
 .main-content__references {
     display: flex;
-    max-width: var(--references-max-width);
 }

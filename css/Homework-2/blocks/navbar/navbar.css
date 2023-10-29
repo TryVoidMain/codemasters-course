@@ -1,8 +1,6 @@
 .navbar {
     display: grid;
     grid-template-rows: 30px 1fr;
-    min-width: var(--navbar-min-width);
-    max-width: var(--navbar-max-width);
     padding: 10px 0;
 
 }
