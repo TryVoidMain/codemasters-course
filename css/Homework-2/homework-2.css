@@ -1,27 +1,25 @@
 @import url(../themes.css);
 @import url(../common.css);
-@import url(blocks/head-container/head-container.css);
-@import url(blocks/head-container/__logo/head-container__logo.css);
-@import url(blocks/head-container/__menu/head-container__menu.css);
-@import url(blocks/main-wrapper/main-wrapper.css);
+@import url(top-content.css);
+@import url(wrapper.css);
 @import url(blocks/breadcrumb/breadcrumb.css);
-@import url(blocks/breadcrumb/__items-list/breadcrumb__items-list.css);
-@import url(blocks/sidebar/sidebar.css);
-@import url(blocks/sidebar/_left/sidebar_left.css);
+@import url(blocks/header/header.css);
+@import url(blocks/actions/actions.css);
+@import url(blocks/top-navbar/top-navbar.css);
+@import url(blocks/main-content/main-content.css);
 @import url(blocks/content/content.css);
-@import url(blocks/lorem/lorem.css);
-
+@import url(blocks/references/references.css);
+@import url(blocks/navbar/navbar.css);
 
 :root{
-    --homework-2-head-container-height: 30px;
-    --homework-2-footer-height: 20px;
-    --homework-2-breadcrumbs-height: 20px;
-
-    --homework-2-main-wrapper-height: calc(100vh - var(--homework-2-head-container-height) - var(--homework-2-footer-height) - var(--homework-2-breadcrumbs-height) - 300);
-    
-    --homework-2-sidebar-width: 200px;
-    --homework-2-sidebar-height: var(--homework-2-main-wrapper-height);
-
-    --homework-2-content-width: calc(100vw - var(--homework-2-sidebar-width));
-
+    --top-content-max-height: 54px;
+    --header-max-height: 64px;
+    --actions-height: 28px;
+    --main-content-max-width: 1440px;
+    --navbar-max-widht: 305px;
+    --navbar-min-width: 200px;
+    --navbar-header-min-height: 75px;
+    --content-max-width: 765px;
+    --references-max-width: 370px;
+    --main-content-max-height: calc(100vh - var(--header-max-height) - var(--top-content-max-height) - var(--actions-height) - 30px);
 }

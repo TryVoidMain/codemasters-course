@@ -1,5 +1,8 @@
 .content {
-    width: var(--homework-2-content-width);
-    background-color: var(--color-lessons-easy-gray);
-    padding: 10px;
+    color: var(--color-lessons-text-primary);
+}
+
+.content__lorem {
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

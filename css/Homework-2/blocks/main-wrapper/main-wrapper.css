@@ -1,7 +1,0 @@
-.main-wrapper {
-    display: flex;
-    padding: 10px;
-    background-color: var(--color-lessons-white-smoke);
-    flex-direction: row;
-    height: var(--homework-2-main-wrapper-height);
-}

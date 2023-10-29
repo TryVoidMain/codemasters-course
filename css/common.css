@@ -23,3 +23,25 @@
 .col {
     display: inline-block;
 }
+
+ul.ul-inline > li {
+    display: inline;
+}
+
+.ul-inline {
+    padding: 0;
+}
+
+.top-navbar__theme {
+    background-color: transparent;
+    color: var(--color-lessons-white);
+}
+
+ul.unmarked-list {
+    list-style-type: none; 
+    padding-left: 0;
+}
+
+ul.unmarked-list > li {
+    padding: 3px 0 3px 0; 
+}

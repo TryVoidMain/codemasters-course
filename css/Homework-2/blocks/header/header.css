@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+    max-width: var(--main-content-max-width);
+    max-height: var(--header-max-height);
+    background-color: transparent;
+    width: 100%;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+    min-width: 160px;
+    font-size: 20px;
+}
+
+.header__top-navbar {
+    padding-left: 30px;
+    align-items: center;
+}

@@ -1,7 +1,11 @@
 :root {
     --color-lessons-aqua:                       #00FFFF;
     --color-lessons-aquamarine:                 #7FFFD4;
+    --color-lessons-background-primary:         #1b1b1b;
+    --color-lessons-background-secondary:       #343434;
     --color-lessons-black:                      #000000;
+    --color-lessons-border-primary:             #858585;
+    --color-lessons-border-secondary:           #696969;
     --color-lessons-dark-blue:                  #191970;
     --color-lessons-dark-olive:                 #556B2F;
     --color-lessons-dark-orange:                #a5492a;
@@ -21,6 +25,8 @@
     --color-lessons-orange:                     #FFA500;
     --color-lessons-rose:                       #FFC0CB;
     --color-lessons-salmon: 	                #FA8072;
+    --color-lessons-text-primary:               #fff;
+    --color-lessons-text-secondary:             #cdcdcd;
     --color-lessons-tomato:                     #FF6347;
     --color-lessons-turquoise:                  #40E0D0;
     --color-lessons-very-light-yellow:          #ffff89;
