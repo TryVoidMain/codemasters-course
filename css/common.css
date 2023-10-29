@@ -36,3 +36,12 @@ ul.ul-inline > li {
     background-color: transparent;
     color: var(--color-lessons-white);
 }
+
+ul.unmarked-list {
+    list-style-type: none; 
+    padding-left: 0;
+}
+
+ul.unmarked-list > li {
+    padding: 3px 0 3px 0; 
+}

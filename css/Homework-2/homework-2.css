@@ -9,13 +9,16 @@
 @import url(blocks/main-content/main-content.css);
 @import url(blocks/content/content.css);
 @import url(blocks/references/references.css);
+@import url(blocks/navbar/navbar.css);
 
 :root{
-    --main-content-max-width: 1440px;
     --top-content-max-height: 54px;
     --header-max-height: 64px;
     --actions-height: 28px;
+    --main-content-max-width: 1440px;
     --navbar-max-widht: 305px;
+    --navbar-min-width: 200px;
+    --navbar-header-min-height: 75px;
     --content-max-width: 765px;
     --references-max-width: 370px;
     --main-content-max-height: calc(100vh - var(--header-max-height) - var(--top-content-max-height) - var(--actions-height) - 30px);

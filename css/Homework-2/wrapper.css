@@ -1,5 +1,6 @@
 .wrapper {
     background-color: var(--color-lessons-background-primary);
+    color: var(--color-lessons-white);
     text-decoration: none;
     display: flex;
     flex-direction: column;
