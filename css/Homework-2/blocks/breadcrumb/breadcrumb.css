@@ -4,6 +4,10 @@
     display: contents;
 }
 
+.breadcrumb__items-list {
+    height: var(--homework-2-breadcrumbs-height);
+}
+
 ul.breadcrumb__items-list li+li::before {
     padding: 2px;
     color: var(--color-lessons-black);
