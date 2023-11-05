@@ -1,5 +1,5 @@
-@import url(../themes.css);
-@import url(../common.css);
+@import url(../../css/common.css);
+@import url(../../css/themes.css);
 @import url(top-content.css);
 @import url(wrapper.css);
 @import url(blocks/breadcrumb/breadcrumb.css);

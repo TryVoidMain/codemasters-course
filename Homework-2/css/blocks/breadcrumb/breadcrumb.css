@@ -1,6 +1,5 @@
 .breadcrumb {
     background-color: var(--color-lessons-easy-gray);
-    height: var(--homework-2-breadcrumbs-height); /* БЭМ блокам нельзя задавать внешнюю геометрию, только элементам*/
     display: contents;
 }
 
