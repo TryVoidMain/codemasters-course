@@ -1,0 +1,19 @@
+.navbar {
+    display: grid;
+    grid-template-rows: 30px 1fr;
+    padding: 10px 0;
+
+}
+
+.navbar__header {
+    min-height: var(--navbar-header-min-height);
+}
+
+.navbar__body {
+    color: var(--color-lessons-white);
+}
+
+.navbar__list-items > p {
+    font-size: 20px;
+    font-weight: 600;
+}

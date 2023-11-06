@@ -1,0 +1,23 @@
+.actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: var(--actions-max-height);
+}
+
+.actions__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--main-content-max-width);
+    width: 100%;
+}
+
+.actions__breadcrumbs {
+    float: left;
+}
+
+.actions__language {
+    float: right;
+    padding: auto;
+}

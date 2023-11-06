@@ -1,0 +1,6 @@
+.top-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-height: var(--top-content-max-height);
+}

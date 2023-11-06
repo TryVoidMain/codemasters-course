@@ -1,0 +1,11 @@
+.wrapper {
+    background-color: var(--color-lessons-background-primary);
+    color: var(--color-lessons-white);
+    text-decoration: none;
+    display: grid;
+    grid-template-rows: calc(var(--top-content-max-height) + var(--top-menu-max-height) + var(--actions-max-height)) 1fr var(--footer-max-height);
+    grid-template-columns: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}

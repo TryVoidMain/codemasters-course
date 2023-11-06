@@ -1,0 +1,24 @@
+.header {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: var(--top-content-max-height) var(--top-menu-max-height) var(--actions-max-height);
+}
+
+.header__top-content {
+    background-color: var(--color-lessons-background-secondary);
+    height: var(--top-content-max-height);
+}
+
+.header__top-menu {
+    background-color: transparent;
+    justify-self: center;
+    height: var(--top-menu-max-height);
+}
+
+.header__actions {
+    background-color: var(--color-lessons-background-secondary);
+    border-top: var(--header-border-height) solid var(--color-lessons-border-primary);
+    border-bottom: var(--header-border-height) solid var(--color-lessons-border-primary);
+    height: var(--header-actions-max-height);
+}

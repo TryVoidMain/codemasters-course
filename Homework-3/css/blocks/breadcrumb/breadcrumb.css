@@ -1,0 +1,24 @@
+.breadcrumb {
+    background-color: var(--color-lessons-easy-gray);
+    display: contents;
+}
+
+.breadcrumb__items-list {
+    height: var(--homework-2-breadcrumbs-height);
+}
+
+ul.breadcrumb__items-list li+li::before {
+    padding: 2px;
+    color: var(--color-lessons-black);
+    content: "/\00a0";
+}
+
+ul.breadcrumb__items-list li a {
+    color: var(--color-lessons-olive);
+    text-decoration: none;
+}
+
+ul.breadcrumb__items-list li a:hover {
+    color: var(--color-lessons-dark-olive);
+    text-decoration: underline;
+}

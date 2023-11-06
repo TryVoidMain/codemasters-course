@@ -1,0 +1,9 @@
+.content {
+    color: var(--color-lessons-text-primary);
+    overflow-y: auto;
+}
+
+.content__lorem {
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

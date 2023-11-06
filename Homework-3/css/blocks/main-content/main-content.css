@@ -1,0 +1,27 @@
+.main-content {
+    max-width: var(--main-content-max-width);
+    width: 100%;
+    background-color: transparent;
+    justify-self: center;
+}
+
+.main-content__container {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: minmax(0,1fr) minmax(0,3fr) minmax(0,15rem);
+}
+
+.main-content__navbar {
+    display: flex;
+}
+
+.main-content__content {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: var(--main-content-max-height);
+}
+
+.main-content__references {
+    display: flex;
+}
