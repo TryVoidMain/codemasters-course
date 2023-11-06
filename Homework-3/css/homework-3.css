@@ -1,17 +1,17 @@
 @import url(../../css/common.css);
 @import url(../../css/themes.css);
 @import url(wrapper.css);
-@import url(blocks/top-content/top-content.css);
-@import url(blocks/top-menu/top-menu.css);
 @import url(blocks/actions/actions.css);
 @import url(blocks/breadcrumb/breadcrumb.css);
-@import url(blocks/header/header.css);
-@import url(blocks/top-navbar/top-navbar.css);
-@import url(blocks/main-content/main-content.css);
 @import url(blocks/content/content.css);
-@import url(blocks/references/references.css);
+@import url(blocks/footer/footer.css);
+@import url(blocks/header/header.css);
+@import url(blocks/main-content/main-content.css);
 @import url(blocks/navbar/navbar.css);
-@import url(top.css);
+@import url(blocks/references/references.css);
+@import url(blocks/top-content/top-content.css);
+@import url(blocks/top-menu/top-menu.css);
+@import url(blocks/top-navbar/top-navbar.css);
 
 :root{
     --top-content-max-height: 54px;
@@ -26,5 +26,7 @@
     --content-max-width: 765px;
     --references-max-width: 370px;
     --main-content-max-width: 1440px;
-    --footer-max-height: 50px;
+    --footer-max-height: 75px;
+    --footer-copyright-max-width: 360px;
+    --footer-sites-max-width: 1080px;
 }

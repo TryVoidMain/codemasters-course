@@ -25,3 +25,15 @@
 .main-content__references {
     display: flex;
 }
+
+@media only screen and (max-width: 1440px) {
+    .main-content__container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .main-content__content {
+        grid-row-start: 0;
+        grid-row-end: 1;
+    }
+}
