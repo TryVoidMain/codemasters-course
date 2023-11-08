@@ -1,19 +1,14 @@
 .top-menu {
     display: flex;
-    width: 100%;
-    max-height: var(--top-menu-max-height);
-    max-width: var(--main-content-max-width);
 }
 
 .top-menu__logo {
     display: flex;
     align-items: center;
-    padding-right: 30px;
-    min-width: 160px;
+    min-width: var(--top-menu-logo-min-width);
     font-size: 20px;
 }
 
 .top-menu__top-navbar {
-    padding-left: 30px;
     align-items: center;
 }

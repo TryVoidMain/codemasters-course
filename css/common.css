@@ -1,3 +1,7 @@
+:root {
+    --button-min-width: 120px;
+}
+
 .link-text {
     font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -44,4 +48,8 @@ ul.unmarked-list {
 
 ul.unmarked-list > li {
     padding: 3px 0 3px 0; 
+}
+
+.button { 
+    min-width: var(--button-min-width);
 }

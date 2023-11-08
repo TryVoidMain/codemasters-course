@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    height: var(--actions-max-height);
 }
 
 .actions__container {
@@ -11,6 +10,8 @@
     align-items: center;
     max-width: var(--main-content-max-width);
     width: 100%;
+    max-height: var(--actions-max-height);
+    height: 100%;
 }
 
 .actions__breadcrumbs {

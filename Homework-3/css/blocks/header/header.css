@@ -7,13 +7,17 @@
 
 .header__top-content {
     background-color: var(--color-lessons-background-secondary);
-    height: var(--top-content-max-height);
+    max-height: var(--top-content-max-height);
+    height: 100%;
 }
 
 .header__top-menu {
     background-color: transparent;
     justify-self: center;
-    height: var(--top-menu-max-height);
+    max-height: var(--top-menu-max-height);
+    max-width: var(--main-content-max-width);
+    width: 100%;
+    height: 100%;
 }
 
 .header__actions {

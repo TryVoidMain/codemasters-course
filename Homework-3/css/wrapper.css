@@ -4,8 +4,12 @@
     text-decoration: none;
     display: grid;
     grid-template-rows: calc(var(--top-content-max-height) + var(--top-menu-max-height) + var(--actions-max-height)) 1fr var(--footer-max-height);
-    grid-template-columns: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
+    min-width: var(--wrapper-min-width);
+    min-height: var(--wrapper-min-height);
+}
+
+.main-content-wrapper, .top-menu-wrapper {
+    max-width: var(--main-content-max-width);
+    width: 100%;
+    justify-self: center;
 }
