@@ -1,0 +1,19 @@
+.form {
+    display: block;
+}
+
+.form__input {
+    display: block;
+    padding: 5px;
+    width: 100%;
+}
+
+.form__input_block {
+    display: block;
+    width: 350px;
+}
+
+.form__input > .check {
+    display: flex;
+    flex-direction: column;
+}

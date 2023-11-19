@@ -2,7 +2,6 @@
     display: grid;
     grid-template-rows: 30px 1fr;
     padding: 10px 0;
-
 }
 
 .navbar__header {
