@@ -2,45 +2,52 @@
     padding-left: 1.2em;
 }
 
+.required::after {
+    content: "*";
+}
+
 .check__box {
     position: absolute;
-    margin-left: -1.2em;
-    width: 1em;
-    height: 1em;
-    background-image: url(../../img/off.svg);
+    margin-left: -1em;
+    margin-top: 0.2em;
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 0.05em;
+    background-color:  white;
+    box-shadow: 0 0 0 0.1em #4A90E2;
 }
 
 .check__input {
     display: flex;
     flex-direction: column;
     position: absolute;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
 }
 
 /* Checked */
 
 .check__input:checked + .check__box {
-    background-image: url(../../img/on.svg);
+    background-color: #4A90E2;
+    background-image: url(../../img/check.svg);
 }
 
 /* Focused */
 
 .check__input:focus + .check__box {
-    background-image: url(../../img/off-focused.svg);
-}
-
-.check__input:checked:focus + .check__box {
-    background-image: url(../../img/on-focused.svg);
+    box-shadow: 
+    0 0 0 0.1em #4A90E2,
+    0 0 0 0.2em #7ED321;
 }
 
 /* Disabled */
 
 .check__input:disabled + .check__box {
-    background-image: url(../../img/off-disabled.svg);
+    box-shadow: 0 0 0 0.1em #9B9B9B;
 }
 
 .check__input:checked:disabled + .check__box {
-    background-image: url(../../img/on-disabled.svg);
+    background-color: #9B9B9B;
 }

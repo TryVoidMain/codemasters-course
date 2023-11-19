@@ -15,28 +15,28 @@
     <div class="container">
         <div class="form">
             <div class="form__input">
-                <label>
+                <label class="form__label required" for="email">
                     email
-                    <input class="form__input_block" type="text" placeholder="email@domain.com" required maxlength="100">
                 </label>
+                <input id="email" class="form__input_block" type="text" placeholder="email@domain.com" required maxlength="100">
             </div>
             <div class="form__input">
-                <label>
+                <label class="form__label required">
                     ФИО
-                    <input class="form__input_block" type="text" required maxlength="150">
                 </label>
+                <input class="form__input_block" type="text" required maxlength="150">
             </div>
             <div class="form__input">
-                <label>
+                <label class="form__label required" for="password">
                     Пароль
-                    <input class="form__input_block" type="password" required minlength="8" maxlength="30">
                 </label>
+                <input id="password" class="form__input_block" type="password" required minlength="8" maxlength="30">
             </div>
             <div class="form__input">
-                <label>
+                <label class="form__label required" for="passwordRepeat">
                     Повторите пароль
-                    <input class="form__input_block" type="password" required minlength="8" maxlength="30">
                 </label>
+                <input id="passwordRepeat" class="form__input_block" type="password" required minlength="8" maxlength="30">
             </div>
             <div class="form__input">
                 <label class="check">
