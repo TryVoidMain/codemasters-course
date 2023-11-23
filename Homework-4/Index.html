@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/themes.css">
     <link rel="stylesheet" href="css/homework-4.css">
+    <script src="./index.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <div class="form">
+        <form id="registrationForm" class="form">
             <div class="form__input">
                 <label class="form__label required" for="email">
                     email
@@ -21,10 +22,10 @@
                 <input id="email" class="form__input_block" type="text" placeholder="email@domain.com" required maxlength="100" pattern="^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\.{1}?[a-zA-Z0-9]+)$">
             </div>
             <div class="form__input">
-                <label class="form__label required">
+                <label class="form__label required" for="fio">
                     ФИО
                 </label>
-                <input class="form__input_block" type="text" required maxlength="150">
+                <input class="form__input_block" id="fio" type="text" required maxlength="150">
             </div>
             <div class="form__input">
                 <label class="form__label required" for="password">
@@ -45,10 +46,11 @@
                     Я подтверждаю, что хочу зарегистрироваться
                 </label>
             </div>
-            <button> 
+            <button type="submit" onsubmit="return validateForm()"> 
                 Отправить
             </button>
-        </div>
+        </form>
     </div>
+
 </body>
 </html>
