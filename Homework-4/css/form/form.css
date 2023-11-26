@@ -36,15 +36,33 @@
     opacity: 0.5;
 }
 
-.form__input_block:invalid {
+/* .form__input_block:invalid {
+    border-radius: 8px;
+    background-color: var(#FFEFEF);
+    border: 0.5px solid var(--color-lessons-tomato);
+} */
+
+/* .form__input_block:invalid:focus {
+    border-radius: 8px;
+    background-color: var(--color-lessons-tomato);
+    border: 0.5px solid var(--color-lessons-tomato);
+    opacity: 0.3;
+} */
+
+.error .form__input_block {
     border-radius: 8px;
     background-color: var(#FFEFEF);
     border: 0.5px solid var(--color-lessons-tomato);
 }
 
-.form__input_block:invalid:focus {
+.error .form__input_block:focus {
     border-radius: 8px;
     background-color: var(--color-lessons-tomato);
     border: 0.5px solid var(--color-lessons-tomato);
     opacity: 0.3;
+}
+
+.error_div {
+    color: var(--color-lessons-tomato);
+    font-size: 10px;
 }
