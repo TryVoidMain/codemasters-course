@@ -3,6 +3,10 @@
 }
 
 .container {
-    width: 300px;
+    width: 100vw;
+    height: 100vh;
     padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

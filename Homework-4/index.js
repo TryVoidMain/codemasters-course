@@ -1,5 +1,5 @@
 function removeError(input) {
-    const parent = input.parentNode;
+    const parent = FindInputParentNode(input);
 
     if (parent.classList.contains('error')) {
         parent.querySelector('.error_div').remove();
@@ -8,7 +8,7 @@ function removeError(input) {
 }
 
 function createError(input, text) {
-    const parent = input.parentNode;
+    const parent = FindInputParentNode(input);
     const errorDiv = document.createElement('div');
 
     errorDiv.classList.add('error_div');
@@ -16,6 +16,17 @@ function createError(input, text) {
 
     parent.classList.add('error');
     parent.append(errorDiv);
+}
+
+function FindInputParentNode (input) {
+    let parent;
+    if (input.type != 'checkbox') {
+        parent = input.parentNode;
+    } else {
+        parent = input.parentNode.parentNode;
+    }
+
+    return parent;
 }
 
 function validation(form) {
@@ -27,11 +38,11 @@ function validation(form) {
     form.querySelectorAll('input').forEach(input => {
 
         if (input.type == 'password') {
-            const regex = new RegExp('(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}');
+            const regex = new RegExp('(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{8,}');
             
             if (!regex.test(input.value)) {
                 removeError(input);
-                createError(input, "Используйте более строгий пароль. Должны присутствовать как цифры, буквы и т.д.");
+                createError(input, "Используйте более строгий пароль. Должны присутствовать цифры, латинские буквы (заглавные/прописные), спецсимволы");
                 result = false;
             }
         }
@@ -69,7 +80,14 @@ function validation(form) {
                 result = false;
             }
         }
-    });
+
+        if (input.dataset.checkRequired == 'true' && input.checked != true) {
+                removeError(input);
+                createError(input, "Вы обязаны подтвердить, что хотите зарегистрироваться");
+                result = false;
+            }
+        }
+    );
 
     if (result == true) {
         form.querySelectorAll('input').forEach(input => {
@@ -101,17 +119,54 @@ function passwordValidation(form) {
     return result;
 }
 
+/* Reset validation error on input event. */
+
+function ResetValidation(form) {
+    let div_inputs = form.querySelectorAll('.form__input');
+
+    div_inputs.forEach(el => {
+        el.addEventListener('input', function(event) {
+            event.preventDefault();
+
+            if (el.classList.contains('error')) {
+                el.querySelector('.error_div').remove();
+                el.classList.remove('error');
+            }
+        });
+    });
+}
+
+function SaveToLocalStorage() {
+    let email = document.getElementById('email');
+    let fio = document.getElementById('fio');
+
+    localStorage.setItem('email', email.value);
+    localStorage.setItem('fio', fio.value);
+}
+
 const form = document.getElementById('registration-form');
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 
     if (validation(this) == true) {
-        alert('Форма провалидирована успешно');
+        SaveToLocalStorage();
+        SwitchToInformation();
+        
     }
 });
 
-form.addEventListener('change', function(event) {
-    event.preventDefault();
+function SwitchToInformation() {
+    form.style.visibility = 'hidden';
+    form.style.width = '1px';
+    form.style.height = '1px';
 
-});
+    const container = document.querySelector('.container');
+    
+    const p = document.createElement('p');
+    p.textContent = "Вы успешно создали аккаунт";
+
+    container.append(p);
+}
+
+ResetValidation(form);
