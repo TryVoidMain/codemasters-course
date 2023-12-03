@@ -78,10 +78,10 @@ export class App {
         button.dataset.id = answer.questionId.toString();
 
         this.answersDiv.appendChild(button);
-        button.addEventListener('click', () => this.SelectAnswer);
+        button.addEventListener('click', () => this.OnSelectAnswer);
     }
 
-    private SelectAnswer(e: MouseEvent) {
+    private OnSelectAnswer(e: MouseEvent) {
         const button = e.target as HTMLButtonElement;
 
         if (!button.dataset.id) {
