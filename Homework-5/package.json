@@ -1,0 +1,21 @@
+{
+  "name": "homework-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "json:server": "node configs/server.js",
+    "build:dev": "npm run lint && webpack --mode=development"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-cli": "^5.1.4",
+    "@csstools/normalize.css": "^12.0.0",
+    "eslint": "^8.55.0",
+    "json-server": "^0.17.4",
+    "typescript": "^5.3.2",
+    "webpack": "^5.89.0"
+  }
+}
