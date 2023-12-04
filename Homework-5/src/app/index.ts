@@ -10,6 +10,7 @@ export class App {
     public currentQuestionId: number = 0;
     public userAnswers = new Array<IUserAnswer>();
     public questions = new Map<number, IQuestion>();
+    public questionsIds = new Array<number>();
 
     constructor() {
         this.questionH1 = document.querySelector<HTMLHeadingElement>('#question') as HTMLHeadingElement;
@@ -19,8 +20,12 @@ export class App {
 
     public async init() {
         this.questions = await GetQuestions();
-        this.currentQuestionId = this.questions.keys().next().value;
+
+        this.questionsIds = Array.from(this.questions.keys());
+        this.currentQuestionId = this.questionsIds.values().next().value;
         this.ShowQuestion(this.currentQuestionId);
+
+        this.nextButton.style.display = 'none';
         this.nextButton.addEventListener('click', () => {
             this.NextQuestion();
         })
@@ -41,7 +46,12 @@ export class App {
 
     public NextQuestion() {
         this.ResetAnswerButton();
+
+
+        // Вот тут надо получить значение questions.key
+        this.currentQuestionId = this.questionsIds.indexOf(this.currentQuestionId);
         this.currentQuestionId++;
+
         this.ShowQuestion(this.currentQuestionId);
     }
 
