@@ -8,8 +8,8 @@ export class App {
     public nextButton: HTMLButtonElement;
     
     public currentQuestionId: number = 0;
-    public questions: IQuestion[] = [];
-    public userAnswers: IUserAnswer[] = [];
+    public userAnswers = new Array<IUserAnswer>();
+    public questions = new Map<number, IQuestion>();
 
     constructor() {
         this.questionH1 = document.querySelector<HTMLHeadingElement>('#question') as HTMLHeadingElement;
@@ -19,7 +19,7 @@ export class App {
 
     public async init() {
         this.questions = await GetQuestions();
-        this.currentQuestionId = 1;
+        this.currentQuestionId = this.questions.keys().next().value;
         this.ShowQuestion(this.currentQuestionId);
         this.nextButton.addEventListener('click', () => {
             this.NextQuestion();
@@ -34,18 +34,9 @@ export class App {
         const currentQuestion: IQuestion = this.questions[questionId];
 
         this.FillQuestion(currentQuestion.question);
-
-        if (currentQuestion.answers && (currentQuestion.answers.length == 4)) {
-            for (let i = 0; i < currentQuestion.answers.length; i++) {
-                const answer: IAnswer = {
-                    questionId: questionId, 
-                    questionAnswer: currentQuestion.answers[i],
-                    answerId: i
-                }
-
-                this.CreateAnswerButton(answer);
-            }
-        }
+        currentQuestion.answers.forEach((a) => {
+            this.CreateAnswerButton(a);
+        })
     }
 
     public NextQuestion() {
@@ -61,7 +52,6 @@ export class App {
         }
     }
 
-
     private FillQuestion(question: string) {
         if (question) {
             this.questionH1.textContent = question;
@@ -73,9 +63,9 @@ export class App {
     private CreateAnswerButton(answer: IAnswer) {
         const button = document.createElement('button');
         button.type = 'button';
-        button.innerHTML = answer.questionAnswer;
+        button.innerHTML = answer.answer;
         button.classList.add('button', 'button__answer');
-        button.dataset.id = answer.questionId.toString();
+        button.dataset.id = answer.answerId.toString();
 
         this.answersDiv.appendChild(button);
         button.addEventListener('click', () => this.OnSelectAnswer);
