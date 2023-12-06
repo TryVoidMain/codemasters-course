@@ -36,12 +36,14 @@ export class App {
             throw Error('Server error. Wrong question Id')
         }
 
-        const currentQuestion: IQuestion = this.questions[questionId];
+        const currentQuestion = this.questions.get(questionId);
 
-        this.FillQuestion(currentQuestion.question);
-        currentQuestion.answers.forEach((a) => {
-            this.CreateAnswerButton(a);
-        })
+        if (currentQuestion) {
+            this.FillQuestion(currentQuestion.question);
+            currentQuestion.answers.forEach((a) => {
+                this.CreateAnswerButton(a);
+            })
+        }
     }
 
     public NextQuestion() {
@@ -97,18 +99,22 @@ export class App {
         });
 
         const choosenAnswerId = parseInt(button.dataset.id);
-        const questionCorrectAnswerId = this.questions[this.currentQuestionId].correctAnswer;
+        const question = this.questions.get(this.currentQuestionId);
 
-        const userAnswer: IUserAnswer = {
-            choosenAnswerId: choosenAnswerId,
-            questionId: this.questions[this.currentQuestionId].id
-        }
+        if (question) {
+            const questionCorrectAnswerId = question.correctAnswer;
 
-        this.userAnswers.push(userAnswer);
-        this.ShowCorrectAnswer(questionCorrectAnswerId);
-        
-        if (choosenAnswerId != questionCorrectAnswerId) {
-            button.classList.add('button__answer_error');
+            const userAnswer: IUserAnswer = {
+                choosenAnswerId: choosenAnswerId,
+                questionId: this.currentQuestionId
+            }
+    
+            this.userAnswers.push(userAnswer);
+            this.ShowCorrectAnswer(questionCorrectAnswerId);
+            
+            if (choosenAnswerId != questionCorrectAnswerId) {
+                button.classList.add('button__answer_error');
+            }
         }
     }
 
