@@ -1,7 +1,14 @@
-import { IAnswer } from "./answer";
+export interface IServerQuestion extends IQuestion {
+    correctAnswer: number;
+}
 
 export interface IQuestion {
+    id: number;
     question: string;
-    correctAnswer: number;
     answers: IAnswer[];
+}
+
+export interface IAnswer {
+    answerId: number;
+    answer: string;
 }

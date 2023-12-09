@@ -1,6 +1,11 @@
+import { IUserAnswer, IServerAnswer } from "../models/answer";
 import { IQuestion } from "../models/question";
-import { get } from "./rest-service";
+import { get, post } from "./rest-service";
 
-export async function GetQuestions(): Promise<Map<number, IQuestion>> {
-    return await get<Map<number, IQuestion>>('questions');
+export async function GetQuestions(): Promise<Array<IQuestion>> {
+    return await get<Array<IQuestion>>('questions');
+}
+
+export async function CheckAnswer(answer: IUserAnswer) {
+    return await post<IUserAnswer, IServerAnswer>('check-answer', answer);
 }

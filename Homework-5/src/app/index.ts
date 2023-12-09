@@ -1,16 +1,18 @@
-import { IAnswer, IUserAnswer } from "./models/answer";
-import { IQuestion } from "./models/question";
-import { GetQuestions } from "./services/quiz-service";
+import { IUserAnswer } from "./models/answer";
+import { IQuestion, IAnswer } from "./models/question";
+import { CheckAnswer, GetQuestions } from "./services/quiz-service";
 
 export class App {
     public questionH1: HTMLHeadingElement;
     public answersDiv: HTMLDivElement;
     public nextButton: HTMLButtonElement;
     
-    public currentQuestionId: number = 0;
+    private currentQuestionId: number = 0;
+    private correctAnswers: number = 0;
+    private incorrectAnswers: number = 0;
+
     public userAnswers = new Array<IUserAnswer>();
-    public questions = new Map<number, IQuestion>();
-    public questionsIds = new Array<number>();
+    public questions = new Array<IQuestion>();
 
     constructor() {
         this.questionH1 = document.querySelector<HTMLHeadingElement>('#question') as HTMLHeadingElement;
@@ -20,45 +22,37 @@ export class App {
 
     public async init() {
         this.questions = await GetQuestions();
+        let question = this.questions.shift();
+        if (question) {
+            this.ShowQuestion(question);
+        }
+        else {
+            throw Error('There is no questions on server');
+        }
+    }
 
-        this.questionsIds = Array.from(this.questions.keys());
-        this.currentQuestionId = this.questionsIds.values().next().value;
-        this.ShowQuestion(this.currentQuestionId);
+    public ShowQuestion(question: IQuestion) {
+        this.ResetAnswersDiv();
+        this.FillQuestion(question.question);
 
-        this.nextButton.setAttribute("disabled","disabled");
+        this.currentQuestionId = question.id;
+
+        question.answers.forEach((a) => {
+            this.CreateAnswerButton(a);
+        });
+
         this.nextButton.addEventListener('click', () => {
-            this.NextQuestion();
-        })
+            const nextQuestion = this.questions.shift();
+            if (nextQuestion) {
+                this.ShowQuestion(nextQuestion);
+            } else {
+                this.EndGame();
+            }
+        });
     }
 
-    public ShowQuestion(questionId: number) {
-        if (!questionId) {
-            throw Error('Server error. Wrong question Id')
-        }
-
-        const currentQuestion = this.questions.get(questionId);
-
-        if (currentQuestion) {
-            this.FillQuestion(currentQuestion.question);
-            currentQuestion.answers.forEach((a) => {
-                this.CreateAnswerButton(a);
-            })
-        }
-    }
-
-    public NextQuestion() {
-        this.ResetAnswerButton();
-
-
-        // Вот тут надо получить значение questions.key
-        this.currentQuestionId = this.questionsIds.find((e) => { return e === this.currentQuestionId })!;
-        this.currentQuestionId++;
-
-        this.ShowQuestion(this.currentQuestionId);
-    }
-
-    public ResetAnswerButton() {
-        this.nextButton.style.display = 'none';
+    public ResetAnswersDiv() {
+        this.nextButton.setAttribute("disabled","disabled");
         while (this.answersDiv.firstChild) {
             this.answersDiv.removeChild(this.answersDiv.firstChild);
         }
@@ -68,14 +62,15 @@ export class App {
         if (question) {
             this.questionH1.textContent = question;
         } else {
-            throw Error('Server error. Question string was corrupted');
+            throw Error('Question string was corrupted');
         }
     }
 
     private CreateAnswerButton(answer: IAnswer) {
         const button = document.createElement('button');
         button.type = 'button';
-        button.innerHTML = answer.answer;
+        button.textContent = answer.answer;
+
         button.classList.add('button', 'button__answer');
         button.dataset.id = answer.answerId.toString();
 
@@ -90,31 +85,41 @@ export class App {
             throw Error('No answer Id info');
         }
 
-        this.nextButton.style.display = 'block';
-
         this.userAnswers.forEach((a) => {
-            if (a.questionId == this.currentQuestionId) {
+            if (a.questionId === this.currentQuestionId) {
                 throw Error('You already answered at this question!');
             }
         });
 
         const choosenAnswerId = parseInt(button.dataset.id);
-        const question = this.questions.get(this.currentQuestionId);
+        let userAnswer: IUserAnswer = { 
+            choosenAnswerId: choosenAnswerId, 
+            questionId: this.currentQuestionId
+        };
 
-        if (question) {
-            const questionCorrectAnswerId = question.correctAnswer;
+        this.userAnswers.push(userAnswer);
 
-            const userAnswer: IUserAnswer = {
-                choosenAnswerId: choosenAnswerId,
-                questionId: this.currentQuestionId
-            }
-    
-            this.userAnswers.push(userAnswer);
-            this.ShowCorrectAnswer(questionCorrectAnswerId);
-            
-            if (choosenAnswerId != questionCorrectAnswerId) {
-                button.classList.add('button__answer_error');
-            }
+        try {
+            CheckAnswer(userAnswer).then((res) => {
+                if (res) {
+                    if (res.correctAnswer === choosenAnswerId) {
+                        this.correctAnswers++;
+                        button.classList.add('button__answer_success');
+                    } else {
+                        this.incorrectAnswers++;
+                        button.classList.add('button__answer_error');
+                        this.ShowCorrectAnswer(res.correctAnswer);
+                    }
+                } else {
+                    throw Error("Wrong answer from server");
+                }
+            });
+        }
+        catch (e) {
+            console.log((e as Error).message);
+        }
+        finally {
+            this.nextButton.removeAttribute('disabled');
         }
     }
 
@@ -125,10 +130,27 @@ export class App {
             if (button.dataset.id) {
                 const buttonId = parseInt(button.dataset.id);
                 
-                if (buttonId == questionCorrectAnswerId) {
+                if (buttonId === questionCorrectAnswerId) {
                     button.classList.add('button__answer_success');
                 }
             }
-        })
+        });
+    }
+
+    private EndGame() {
+        this.questionH1.textContent = 'Quiz ended. Your\'s stats: ';
+        this.ResetAnswersDiv();
+        let result = 
+`<div> \
+    <span>Правильных ответов: ${this.correctAnswers}</span>    \
+    <span>Неправильных ответов: ${this.incorrectAnswers}</span>   \
+</div>`;
+        
+        this.answersDiv.innerHTML = result;
+
+        this.nextButton.textContent = 'Play again';
+        this.nextButton.addEventListener('click', () => {
+            this.init();
+        });
     }
  }

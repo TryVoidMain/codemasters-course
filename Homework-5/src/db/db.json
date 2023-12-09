@@ -1,52 +1,50 @@
 {
     "questions": [
         {
-            "1": {
-                "question": "В чем смысл жизни?",
-                "correctAnswer": 2,
-                "answers": [
-                    {
-                        "answer": "В еде",
-                        "answerId": 1
-                    }, 
-                    {
-                        "answer": "В питие",
-                        "answerId": 2
-                    }, 
-                    {
-                        "answer": "42",
-                        "answerId": 3
-                    }, 
-                    {
-                        "answer": "В страданиях",
-                        "answerId": 4
-                    }
-                ]
-            }
+            "question": "В чем смысл жизни?",
+            "id": 1,
+            "correctAnswer": 3,
+            "answers": [
+                {
+                    "answer": "В еде",
+                    "answerId": 1
+                }, 
+                {
+                    "answer": "В питие",
+                    "answerId": 2
+                }, 
+                {
+                    "answer": "42",
+                    "answerId": 3
+                }, 
+                {
+                    "answer": "В страданиях",
+                    "answerId": 4
+                }
+            ]
         },
         {
-            "2": {
-                "question": "Что означает известный код из Матрицы?",
-                "correctAnswer": 0,
-                "answers": [
-                    {
-                        "answer": "Рецепт суши",
-                        "answerId": 1
-                    }, 
-                    {
-                        "answer": "Шифр инопланетян",
-                        "answerId": 2
-                    }, 
-                    {
-                        "answer": "Язык программирования",
-                        "answerId": 3
-                    }, 
-                    {
-                        "answer": "Знаки судьбы",
-                        "answerId": 4
-                    }
-                ]
-            }
+            "question": "Что означает известный код из Матрицы?",
+            "id": 2,
+            "correctAnswer": 1,
+            "answers": [
+                {
+                    "answer": "Рецепт суши",
+                    "answerId": 1
+                }, 
+                {
+                    "answer": "Шифр инопланетян",
+                    "answerId": 2
+                }, 
+                {
+                    "answer": "Язык программирования",
+                    "answerId": 3
+                }, 
+                {
+                    "answer": "Знаки судьбы",
+                    "answerId": 4
+                }
+            ]
         }
     ]
 }
