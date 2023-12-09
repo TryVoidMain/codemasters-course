@@ -1,0 +1,16 @@
+.container {
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container__header {
+    text-align: center;
+}
+
+.container__body {
+    align-content: center;
+}

@@ -25,7 +25,7 @@ export class App {
         this.currentQuestionId = this.questionsIds.values().next().value;
         this.ShowQuestion(this.currentQuestionId);
 
-        this.nextButton.style.display = 'none';
+        this.nextButton.setAttribute("disabled","disabled");
         this.nextButton.addEventListener('click', () => {
             this.NextQuestion();
         })
@@ -51,7 +51,7 @@ export class App {
 
 
         // Вот тут надо получить значение questions.key
-        this.currentQuestionId = this.questionsIds.indexOf(this.currentQuestionId);
+        this.currentQuestionId = this.questionsIds.find((e) => { return e === this.currentQuestionId })!;
         this.currentQuestionId++;
 
         this.ShowQuestion(this.currentQuestionId);

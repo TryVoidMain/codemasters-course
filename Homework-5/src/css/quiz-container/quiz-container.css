@@ -1,0 +1,23 @@
+.quiz-container {
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+}
+
+.quiz-container__question {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+}
+
+.quiz-container__answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.quiz-container__next-button {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}

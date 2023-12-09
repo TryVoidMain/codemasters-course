@@ -6,21 +6,29 @@
     <title>Homework-5</title>
     <link rel="stylesheet" href="./node_modules/@csstools/normalize.css/opinionated.css">
     <link rel="stylesheet" href="./node_modules/@csstools/normalize.css/normalize.css">
-    
+    <link rel="stylesheet" href="./src/css/homework-5.css">
 </head>
 <body>
     <div class="container">
-        <h1>QUIZ</h1>
+        <div class="container__header">
+            <h1>QUIZ</h1>
+        </div>
 
-        <div class="quiz-container">
-            <h2 id="question" class="quiz-container__question"></h2>
-
-            <div id="answers" class="quiz-container__answers">
-                
-
+        <div class="container__body">
+            <div class="quiz-container">
+                <div class="quiz-container__question">
+                    <h2 id="question">For start the quiz push the button "Play"</h2>
+                </div>
+    
+                <div id="answers" class="quiz-container__answers">
+                    
+    
+                </div>
+    
+                <div class="quiz-container__next-button">
+                    <button id="btn-answer" type="button" class="button button__next">Play</button>
+                </div>
             </div>
-
-            <button id="check-answer" type="button" class="quiz-container__next-button">Answer</button>
         </div>
     </div>
 </body>
