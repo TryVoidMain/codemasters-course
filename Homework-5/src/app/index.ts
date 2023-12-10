@@ -102,7 +102,7 @@ export class App {
         try {
             CheckAnswer(userAnswer).then((res) => {
                 if (res) {
-                    if (res.correctAnswer === choosenAnswerId) {
+                    if (res.isCorrect) {
                         this.correctAnswers++;
                         button.classList.add('button__answer_success');
                     } else {

@@ -1,11 +1,9 @@
-
-
 export interface IUserAnswer {
     questionId: number;
     choosenAnswerId: number;
 }
 
 export interface IServerAnswer {
-    questionId: number;
+    isCorrect: boolean;
     correctAnswer: number;
 }
