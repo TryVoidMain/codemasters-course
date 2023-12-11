@@ -7,17 +7,22 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "json:server": "node configs/server.js",
     "dev": "tsc && webpack --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "serve": "webpack serve"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@csstools/normalize.css": "^12.0.0",
+    "css-loader": "^6.8.1",
     "eslint": "^8.55.0",
     "html-webpack-plugin": "^5.5.4",
     "json-server": "^0.17.4",
+    "mini-css-extract-plugin": "^2.7.6",
+    "ts-loader": "^9.5.1",
     "typescript": "^5.3.2",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }

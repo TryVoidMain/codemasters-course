@@ -11,9 +11,11 @@ server.post('/check-answer', (req, res) => {
     const questionId = req.body.questionId;
     const userAnswer = req.body.choosenAnswerId;
     const question = questions.find(q => q.id === questionId);
+
     if (question) {
         let isCorrect = question.correctAnswer === userAnswer;
-        res.json({
+        
+        res.jsonp({
             isCorrect: isCorrect,
             correctAnswer: question.correctAnswer
         })

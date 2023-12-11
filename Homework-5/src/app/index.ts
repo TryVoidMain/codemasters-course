@@ -1,6 +1,7 @@
 import { IUserAnswer } from "./models/answer";
 import { IQuestion, IAnswer } from "./models/question";
 import { CheckAnswer, GetQuestions } from "./services/quiz-service";
+import './../css/homework-5.css';
 
 export class App {
     public questionH1: HTMLHeadingElement;
@@ -16,23 +17,22 @@ export class App {
 
     constructor() {
         this.questionH1 = document.querySelector<HTMLHeadingElement>('#question') as HTMLHeadingElement;
-        this.answersDiv = document.querySelector<HTMLDivElement>('#questions') as HTMLDivElement;
+        this.answersDiv = document.querySelector<HTMLDivElement>('#answers') as HTMLDivElement;
         this.nextButton = document.querySelector<HTMLButtonElement>('#btn-answer') as HTMLButtonElement;
     }
 
     public async init() {
         this.questions = await GetQuestions();
-        let question = this.questions.shift();
-        if (question) {
+
+        let question = this.questions.shift()!;
+        this.nextButton.addEventListener('click', () => {
             this.ShowQuestion(question);
-        }
-        else {
-            throw Error('There is no questions on server');
-        }
+        });
     }
 
     public ShowQuestion(question: IQuestion) {
         this.ResetAnswersDiv();
+
         this.FillQuestion(question.question);
 
         this.currentQuestionId = question.id;
@@ -75,7 +75,7 @@ export class App {
         button.dataset.id = answer.answerId.toString();
 
         this.answersDiv.appendChild(button);
-        button.addEventListener('click', () => this.OnSelectAnswer);
+        button.addEventListener('click', (e) => this.OnSelectAnswer(e));
     }
 
     private OnSelectAnswer(e: MouseEvent) {
@@ -101,6 +101,7 @@ export class App {
 
         try {
             CheckAnswer(userAnswer).then((res) => {
+                console.log(res);
                 if (res) {
                     if (res.isCorrect) {
                         this.correctAnswers++;
@@ -154,3 +155,8 @@ export class App {
         });
     }
  }
+
+ window.addEventListener('DOMContentLoaded', () => {
+    const app = new App();
+    app.init();
+});

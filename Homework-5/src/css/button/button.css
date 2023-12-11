@@ -2,3 +2,11 @@
     min-width: 150px;
     min-height: 40px;
 }
+
+.button__answer_success {
+    background-color: green;
+}
+
+.button__answer_error {
+    background-color: tomato;
+}
