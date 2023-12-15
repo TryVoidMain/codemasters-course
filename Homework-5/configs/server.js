@@ -11,17 +11,12 @@ server.post('/check-answer', (req, res) => {
     const questionId = req.body.questionId;
     const userAnswer = req.body.choosenAnswerId;
     const question = questions.find(q => q.id === questionId);
-
-    if (question) {
-        let isCorrect = question.correctAnswer === userAnswer;
-        
-        res.jsonp({
-            isCorrect: isCorrect,
-            correctAnswer: question.correctAnswer
-        })
-    } else {
-        throw Error('There is no question with such id');
-    }
+    const isCorrect = question.correctAnswer === userAnswer;
+    
+    res.json({
+        isCorrect: isCorrect,
+        correctAnswer: question.correctAnswer
+    });
 });
 
 server.use(router);

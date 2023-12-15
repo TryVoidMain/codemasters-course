@@ -4,11 +4,11 @@
   "description": "",
   "main": "./dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "json:server": "node configs/server.js",
-    "dev": "tsc && webpack --mode development",
+    "build:dev": "npm run lint && webpack --mode=development",
     "build": "webpack --mode production",
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "debugwebpack": "node --inspect --inspect-brk ./src/app/index.ts"
   },
   "author": "",
   "license": "ISC",

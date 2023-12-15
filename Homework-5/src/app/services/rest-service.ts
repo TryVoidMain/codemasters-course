@@ -9,12 +9,12 @@ export async function get<T>(url: string): Promise<T> {
 export async function post<T, U>(url:string, req: T): Promise<U> {
     const api = `${SERVER_URL}${url}`;
     const options = {
-        method: "POST",
+        method: "post",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(req)
     }
 
-    return (await fetch(url, options)).json();
+    return (await fetch(api, options)).json();
 }

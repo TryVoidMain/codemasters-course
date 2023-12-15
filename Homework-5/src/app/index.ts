@@ -22,11 +22,14 @@ export class App {
     }
 
     public async init() {
+        this.correctAnswers = 0;
+        this.incorrectAnswers = 0;
         this.questions = await GetQuestions();
 
         let question = this.questions.shift()!;
         this.nextButton.addEventListener('click', () => {
             this.ShowQuestion(question);
+            this.nextButton.textContent = 'Next Question';
         });
     }
 
@@ -78,7 +81,7 @@ export class App {
         button.addEventListener('click', (e) => this.OnSelectAnswer(e));
     }
 
-    private OnSelectAnswer(e: MouseEvent) {
+    private async OnSelectAnswer(e: MouseEvent) {
         const button = e.target as HTMLButtonElement;
 
         if (!button.dataset.id) {
@@ -87,7 +90,7 @@ export class App {
 
         this.userAnswers.forEach((a) => {
             if (a.questionId === this.currentQuestionId) {
-                throw Error('You already answered at this question!');
+                alert('You already answered at this question!');
             }
         });
 
@@ -100,21 +103,21 @@ export class App {
         this.userAnswers.push(userAnswer);
 
         try {
-            CheckAnswer(userAnswer).then((res) => {
-                console.log(res);
-                if (res) {
-                    if (res.isCorrect) {
-                        this.correctAnswers++;
-                        button.classList.add('button__answer_success');
-                    } else {
-                        this.incorrectAnswers++;
-                        button.classList.add('button__answer_error');
-                        this.ShowCorrectAnswer(res.correctAnswer);
-                    }
+            var res = await CheckAnswer(userAnswer);
+
+            console.log(res);
+            if (res) {
+                if (res.isCorrect) {
+                    this.correctAnswers++;
+                    button.classList.add('button__answer_success');
                 } else {
-                    throw Error("Wrong answer from server");
+                    this.incorrectAnswers++;
+                    button.classList.add('button__answer_error');
+                    this.ShowCorrectAnswer(res.correctAnswer);
                 }
-            });
+            } else {
+                throw Error("Wrong answer from server");
+            }
         }
         catch (e) {
             console.log((e as Error).message);
@@ -141,6 +144,7 @@ export class App {
     private EndGame() {
         this.questionH1.textContent = 'Quiz ended. Your\'s stats: ';
         this.ResetAnswersDiv();
+        this.answersDiv.style.display = 'flex';
         let result = 
 `<div> \
     <span>Правильных ответов: ${this.correctAnswers}</span>    \
@@ -148,11 +152,9 @@ export class App {
 </div>`;
         
         this.answersDiv.innerHTML = result;
-
-        this.nextButton.textContent = 'Play again';
-        this.nextButton.addEventListener('click', () => {
-            this.init();
-        });
+        this.answersDiv.style.alignContent = 'center';
+        this.answersDiv.style.justifyContent = 'center';
+        this.nextButton.remove();
     }
  }
 
